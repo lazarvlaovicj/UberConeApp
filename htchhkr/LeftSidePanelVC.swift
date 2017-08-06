@@ -47,9 +47,6 @@ class LeftSidePanelVC: UIViewController {
             userImageView.isHidden = false
             loginOutBtn.setTitle("Sign Out", for: .normal)
         }
-        
-        
-        
     }
     
     func observePassengerAndDrivers() {
