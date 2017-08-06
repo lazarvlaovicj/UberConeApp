@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1508575E1F2FD62F00DB620F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508575D1F2FD62F00DB620F /* DataService.swift */; };
+		152DA4961F320DCD004FD4CA /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152DA4951F320DCD004FD4CA /* PassengerAnnotation.swift */; };
 		153A33921F2F476700E6D1E5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A33911F2F476700E6D1E5 /* GradientView.swift */; };
 		153A33941F2F477700E6D1E5 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A33931F2F477700E6D1E5 /* RoundImageView.swift */; };
 		153A33961F2F478300E6D1E5 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A33951F2F478300E6D1E5 /* RoundedShadowView.swift */; };
@@ -19,6 +21,10 @@
 		153A33A61F2F866400E6D1E5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A33A51F2F866400E6D1E5 /* LoginVC.swift */; };
 		153A33A81F2F8E4400E6D1E5 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A33A71F2F8E4400E6D1E5 /* RoundedCornerTextField.swift */; };
 		153A33AA1F2F97AB00E6D1E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 153A33A91F2F97AB00E6D1E5 /* GoogleService-Info.plist */; };
+		15489D831F30BAE400051849 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15489D821F30BAE400051849 /* UpdateService.swift */; };
+		15489D851F30C7EF00051849 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15489D841F30C7EF00051849 /* DriverAnnotation.swift */; };
+		15DB758B1F323A7400C444E4 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DB758A1F323A7400C444E4 /* UIViewControllerExt.swift */; };
+		15E7C3BC1F33D7750007B92B /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E7C3BB1F33D7750007B92B /* Alertable.swift */; };
 		15F9CCEA1F2E4DE100F2FBAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9CCE91F2E4DE100F2FBAD /* AppDelegate.swift */; };
 		15F9CCEC1F2E4DE100F2FBAD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9CCEB1F2E4DE100F2FBAD /* HomeVC.swift */; };
 		15F9CCEF1F2E4DE100F2FBAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F9CCED1F2E4DE100F2FBAD /* Main.storyboard */; };
@@ -28,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1508575D1F2FD62F00DB620F /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		152DA4951F320DCD004FD4CA /* PassengerAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		153A33911F2F476700E6D1E5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		153A33931F2F477700E6D1E5 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		153A33951F2F478300E6D1E5 /* RoundedShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -40,6 +48,10 @@
 		153A33A51F2F866400E6D1E5 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		153A33A71F2F8E4400E6D1E5 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		153A33A91F2F97AB00E6D1E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		15489D821F30BAE400051849 /* UpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		15489D841F30C7EF00051849 /* DriverAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		15DB758A1F323A7400C444E4 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		15E7C3BB1F33D7750007B92B /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		15F9CCE61F2E4DE100F2FBAD /* htchhkr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = htchhkr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F9CCE91F2E4DE100F2FBAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15F9CCEB1F2E4DE100F2FBAD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -64,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1508575C1F2FD60600DB620F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1508575D1F2FD62F00DB620F /* DataService.swift */,
+				15489D821F30BAE400051849 /* UpdateService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		153A338E1F2F474700E6D1E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +105,8 @@
 				153A33971F2F478C00E6D1E5 /* CircleView.swift */,
 				153A33991F2F479300E6D1E5 /* RoundedShadowButton.swift */,
 				153A33A71F2F8E4400E6D1E5 /* RoundedCornerTextField.swift */,
+				15489D841F30C7EF00051849 /* DriverAnnotation.swift */,
+				152DA4951F320DCD004FD4CA /* PassengerAnnotation.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -99,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				153A33A01F2F579800E6D1E5 /* CenterVCDelegate.swift */,
+				15E7C3BB1F33D7750007B92B /* Alertable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -107,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				153A33A31F2F7A7500E6D1E5 /* UIViewExt.swift */,
+				15DB758A1F323A7400C444E4 /* UIViewControllerExt.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -132,6 +157,7 @@
 		15F9CCE81F2E4DE100F2FBAD /* htchhkr */ = {
 			isa = PBXGroup;
 			children = (
+				1508575C1F2FD60600DB620F /* Services */,
 				153A33A21F2F7A6200E6D1E5 /* Extentions */,
 				153A339F1F2F578900E6D1E5 /* Protocols */,
 				153A33901F2F475600E6D1E5 /* Model */,
@@ -290,13 +316,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				153A33A11F2F579800E6D1E5 /* CenterVCDelegate.swift in Sources */,
+				1508575E1F2FD62F00DB620F /* DataService.swift in Sources */,
+				15DB758B1F323A7400C444E4 /* UIViewControllerExt.swift in Sources */,
 				153A339A1F2F479300E6D1E5 /* RoundedShadowButton.swift in Sources */,
 				153A33A61F2F866400E6D1E5 /* LoginVC.swift in Sources */,
 				153A339C1F2F546100E6D1E5 /* LeftSidePanelVC.swift in Sources */,
 				153A33981F2F478C00E6D1E5 /* CircleView.swift in Sources */,
 				153A339E1F2F54E200E6D1E5 /* ContainerVC.swift in Sources */,
+				152DA4961F320DCD004FD4CA /* PassengerAnnotation.swift in Sources */,
 				153A33A41F2F7A7500E6D1E5 /* UIViewExt.swift in Sources */,
+				15489D851F30C7EF00051849 /* DriverAnnotation.swift in Sources */,
+				15E7C3BC1F33D7750007B92B /* Alertable.swift in Sources */,
 				15F9CCEC1F2E4DE100F2FBAD /* HomeVC.swift in Sources */,
+				15489D831F30BAE400051849 /* UpdateService.swift in Sources */,
 				153A33941F2F477700E6D1E5 /* RoundImageView.swift in Sources */,
 				153A33961F2F478300E6D1E5 /* RoundedShadowView.swift in Sources */,
 				153A33A81F2F8E4400E6D1E5 /* RoundedCornerTextField.swift in Sources */,

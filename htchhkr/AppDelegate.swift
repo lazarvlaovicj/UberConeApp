@@ -16,11 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate var containerVC = ContainerVC()
     
-
+    var MenuContainerVC: ContainerVC {
+        return containerVC
+    }
+    
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        // not really needed unless you really need it FIRDatabase.database().persistenceEnabled = true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
 
         containerVC = ContainerVC()
         window?.rootViewController = containerVC
@@ -49,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 
 
