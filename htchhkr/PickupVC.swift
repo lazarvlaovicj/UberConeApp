@@ -50,7 +50,8 @@ class PickupVC: UIViewController {
 
     @IBAction func acceptTrip(_ sender: UIButton) {
         UpdateService.instance.acceptTrip(withPassengerKey: passengerKey, forDriverKey: currentUserID!)
-        presentedViewController?.shouldPresentLoadingView(true)
+        let delegate = AppDelegate.getAppDelegate()
+        delegate.window?.rootViewController?.shouldPresentLoadingView(true)
     }
     
     @IBAction func cancelBtn(_ sender: UIButton) {

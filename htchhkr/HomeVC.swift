@@ -19,6 +19,7 @@ class HomeVC: UIViewController, Alertable {
     @IBOutlet weak var centerMapBtn: UIButton!
     @IBOutlet weak var destinationTextField: UITextField!
     @IBOutlet weak var destinationCircle: CircleView!
+    @IBOutlet weak var cancelBtn: UIButton!
 
     var delegate: CenterVCDelegate?
     var manager: CLLocationManager?
@@ -82,6 +83,53 @@ class HomeVC: UIViewController, Alertable {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (status) in
+            if status == false {
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot] {
+                        for trip in tripSnapshot {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
+                                let pickupCoordinateArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
+                                let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees)
+                                
+                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+                                
+                                self.dropPinFor(placemark: pickupPlacemark)
+                                self.searchMapKitForResultsWithPolyline(forMapItem: MKMapItem(placemark: pickupPlacemark))
+                            }
+                        }
+                    }
+                })
+            }
+        })
+        
+        DataService.instance.REF_TRIPS.observe(.childRemoved, with: { (removerTripSnapshot) in
+            let removedTripDict = removerTripSnapshot.value as? [String: AnyObject]
+            
+            if removedTripDict?["driver"] != nil {
+                DataService.instance.REF_DRIVERS.child(removedTripDict?["driverKey"] as! String).updateChildValues(["driverIsOnTrip": false])
+            } else {
+                DataService.instance.userIsDriver(userKey: self.currentUserId!, handler: { (isDriver) in
+                    if isDriver == true {
+                        //Remove overlays and annotation, hide request ride btn anc cancel btn
+                    } else {
+                        self.cancelBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+                        self.actionBtn.animateButton(shouldLoad: false, withMessage: "REQUEST RIDE")
+                        self.destinationTextField.isUserInteractionEnabled = true
+                        self.destinationTextField.text = ""
+                        
+                        //remove all map annotations and overlays
+                        self.centerMapOnUserLocation()
+                    }
+                })
+            }
+        })
+        
+    }
+    
     func checkLocationAuthStatus() {
         
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
@@ -138,6 +186,23 @@ class HomeVC: UIViewController, Alertable {
         let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, regionRadius, regionRadius)
         mapView.setRegion(region, animated: true)
     }
+    
+    @IBAction func cancelBtnWasPressed(_ sender: UIButton) {
+        DataService.instance.driverIsOnTrip(driverKey: currentUserId!) { (isOnTrip, driverKey, tripKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: tripKey!, forDriverKey: driverKey!)
+            }
+        }
+        
+        DataService.instance.passengerIsOnTrip(passengerKey: currentUserId!) { (isOnTrip, driverKey, passengerKey) in
+            if isOnTrip == true {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: driverKey!)
+            } else {
+                UpdateService.instance.cancelTrip(withPassengerKey: self.currentUserId!, forDriverKey: nil)
+            }
+        }
+    }
+    
     
     @IBAction func centerMapBtnWasPressed(_ sender: UIButton) {
         DataService.instance.REF_USERS.observeSingleEvent(of: .value, with: { (snapshot) in
